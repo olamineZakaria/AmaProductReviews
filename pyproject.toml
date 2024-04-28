@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "AmaProductReviews"
+version = "0.0.7"
+description= "Analyze Amazon product reviews"
+authors = ["olamine zakaria <olaminezakaria03@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+beautifulsoup4 = "*"
+selenium = "*"
+webdriver_manager = "*"
+requests = "^2.31.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
