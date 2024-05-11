@@ -106,3 +106,12 @@ def comment_dataFrame(UrlProduct):
     return df
 def sentiemnt_by_comment(df):
     return df.groupby('sentiment').count()['comment'].reset_index()
+
+def get_reviews_images(UrlProduct):
+    driver.get(UrlProduct)
+    soup = BeautifulSoup(driver.page_source,'html.parser')
+    image_reviews = soup.find_all('div', class_='_Y3Itb_media-thumbnail-container_2MRZY')
+    image_reviews = str(image_reviews)
+    image_reviews = re.findall(r'src="(https.*?jpg)',image_reviews)
+    # Image_of_product = re.findall(r'src="https.*pg',str(Image_of_product))
+    return image_reviews
